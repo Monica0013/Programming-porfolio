@@ -9,7 +9,45 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
-Syntax highlighted code block
+
+
+function setup() {
+    createCanvas(800, 800)
+    colorMode(HSB, height, height, height);
+    noStroke();
+    background('white');
+}
+
+const barWidth = 100;
+let lastBar = -10;
+
+function draw() {
+
+    let whichBar = mouseX / barWidth;
+    if (whichBar !== lastBar) {
+        let barX = whichBar * barWidth;
+        fill(mouseY, height, height);
+        rect(barX, 0, barWidth, height);
+        lastBar = whichBar;
+    }
+    
+
+
+    fill('white')
+    circle(50, 50, 40, 50);
+
+    fill(100)
+    triangle(1, 150, 360, 360, 1, 360);
+
+    fill('maroon')
+    triangle(150, 150, 360, 360, 1, 360);
+
+    fill('white')
+    if (mouseIsPressed) {
+        ellipse(mouseX, mouseY, 50)
+    }
+}
+
 
 # Header 1
 ## Header 2
@@ -26,9 +64,8 @@ Syntax highlighted code block
 [Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+[GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
 
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Monica0013/Programming-porfolio/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
